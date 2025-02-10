@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.cdnfonts.com/css/graphik-trial" rel="stylesheet">
+    <script src="search.js"></script>
+  
+    
+      
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicompanion</title>
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/graphik-trial');
+        /*header style*/
+        :root {
+            --primary: #00B207;
+        }
+
+        .hed {
+            display: flex;
+
+            background: #1F6366;
+         
+            border-style: hidden;
+            width: calc(100%-649px);
+
+            margin-bottom: 20px;
+
+            overflow: hidden;
+            height: 110px;
+            position: static;
+            box-sizing: border-box;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5), 0px -4px 6px rgba(0, 0, 0, 0.5);
+
+        }
+
+        .hed::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+       
+
+
+        .header_panel_wrap {
+            display: flex;
+            min-width: 1266px;
+            max-width: 1580px;
+            border: 2px;
+           
+           
+            margin: auto;
+            box-sizing: border-box;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+
+            padding: 10px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            width: fit-content;
+            height: fit-content;
+            display: inline-block;
+            overflow: hidden;
+          
+            margin-right: 25px;
+            margin-left: 25px;
+            border-radius: 50px 50px 50px 50px;
+
+        }
+
+
+        .l {
+            width: 100%;
+            height: 90px;
+            image-resolution: 100px;
+
+        }
+
+        .cart {
+
+
+            background-color: white;
+            width: 100px;
+            height: 42px;
+            vertical-align: top;
+            position: relative;
+            padding: 10px;
+
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            border-color: #00B207;
+            border-width: 2px;
+            font-weight: bolder;
+            border-style: solid;
+            transition: box-shadow 0.2s;
+            grid-column: 1;
+            overflow: hidden;
+
+        }
+
+        .cart:hover {
+            background-color: #00B207;
+            transform: scale(1.1);
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        }
+
+
+        .d1 {
+            background-color: white;
+            color: #00B207;
+            padding: 5px;
+            vertical-align: top;
+            left: 480px;
+            cursor: pointer;
+            border-radius: 25px;
+            border-color: #00B207;
+            width: 100px;
+            text-align: center;
+            font-family: 'Graphik Trial', sans-serif;
+            font-weight: 800;
+            font-size: medium;
+            border-width: 2px;
+            border-style: solid;
+            transition: background-color 0.8s, color 0.8s;
+        }
+
+        .d2 {
+            background-color: white;
+            color: #00B207;
+            padding: 5px;
+            vertical-align: top;
+            border-color: #00B207;
+            position: relative;
+
+
+            cursor: pointer;
+            border-radius: 25px;
+            border-width: 2px;
+
+            width: 100px;
+            text-align: center;
+            font-family: 'Graphik Trial', sans-serif;
+            font-weight: 800;
+            font-size: medium;
+            border-style: solid;
+
+            transition: background-color 0.8s, color 0.8s;
+
+        }
+
+
+
+        .d1:hover,
+        .d2:hover {
+
+            color: white;
+            background-color: #00B207;
+            transform: scale(1.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+
+        .search_button:active {
+            opacity: 0.5;
+        }
+
+        .search_button:hover {
+            box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.5);
+            transform: scale(1.1);
+            transition: transform 0.3s ease-in-out;
+
+        }
+
+        .search_bar {
+            background-color: #ffffff;
+           padding:20px;
+            height: 34px;
+            border: none;
+            border-radius: 13px;
+            width: 400px;
+              font-family: 'Graphik Trial', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3), 0px -4px 6px rgba(0, 0, 0, 0.3);
+
+        }
+
+        .search_bar:hover {
+            transform: scale(1.1);
+            transition: transform 0.5s ease-in-out;
+
+        }
+
+        
+
+        .search_button {
+
+            color: white;
+            background-color: black;
+            width: 100px;
+            height: 42px;
+            display: inline-block;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            border-color: #00B207;
+            border-width: 1px;
+            font-family: 'Graphik Trial', sans-serif;
+            font-weight: 700;
+
+            border-style: solid;
+            transition: box-shadow 0.2s;
+        }
+
+
+
+
+
+        #image {
+            height: 380px;
+            width: 550px;
+            position: fixed;
+
+        }
+
+        .image_container {
+            height: 380px;
+            width: 550px;
+            background-color: black;
+            align-content: flex-end;
+            margin-left: 55%;
+        }
+
+        .hero_page {
+            align-items: center;
+            display: block;
+            width: 100%;
+            max-width: 1360px;
+            height: 500px;
+            border-radius: 60px;
+            padding-top: 12px;
+            z-index: 1;
+            background: url('https://t3.ftcdn.net/jpg/03/11/86/42/360_F_311864233_WrzVI9w22XmJF2Hul4YQQCnCyBa5IeUe.jpg')no-repeat center center fixed;
+            background-size: 1350px;
+            overflow: hidden;
+            position: relative;
+            margin: auto;
+
+
+        }
+
+        .hero_page_div {
+
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .nurse {
+            position: absolute;
+            width: auto;
+            height: 441px;
+
+            z-index: 88;
+            top: 56%;
+            align-items: center;
+            display: block;
+            margin-left: 50%;
+            transform: translate(-50%, -50%);
+
+
+        }
+
+        .health {
+            position: absolute;
+            pointer-events: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 150px;
+
+            text-align: center;
+            font-weight: 800;
+            line-height: 110%;
+            color: #162ad6;
+            overflow: hidden;
+            display: block;
+            letter-spacing: -.02em;
+            margin-top: 150px;
+            left: 50%;
+            text-transform: uppercase;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+
+        }
+
+        body {
+
+            background-color: #1F6366;
+            display: block;
+            margin: 0;
+
+
+        }
+        .whole_product_div {
+            padding: 10px;
+        }
+
+        .product_section,
+        .product_section_2,
+        .product_section_3 {
+            align-items: center;
+            display: block;
+            width: 100%;
+            max-width: 1360px;
+            height: fit-content;
+            border-radius: 60px;
+            padding-top: 12px;
+            z-index: 2;
+            background: #6C534E;
+            background-size: cover;
+            position: relative;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 20px;
+            background-color: #252b61;
+
+            justify-items: center;
+
+        }
+
+        .product_section_3 {
+            align-items: center;
+            display: block;
+            width: 100%;
+            max-width: 1360px;
+            height: fit-content;
+            border-radius: 60px;
+            padding-top: 12px;
+
+            background: #6C534E;
+            background-size: cover;
+            position: relative;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 20px;
+            background-color: #252b61;
+
+            justify-items: center;
+
+        }
+
+        .product_container,
+        .product_container_2 {
+            width: fit-content;
+            max-width: 1400px;
+            height: fit-content;
+            padding-bottom: 20px;
+
+        }
+
+        .product_container_3 {
+
+            max-width: 1400px;
+            height: fit-content;
+
+
+        }
+
+
+        .product_container_title {
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 120%;
+            font-size: 50px;
+
+            display: block;
+            text-transform: capitalize;
+            letter-spacing: -.02em;
+            padding-top: 20px;
+            padding-bottom: 20px;
+
+        }
+
+
+        .product_container_grid {
+            grid-column-gap: auto;
+            grid-row-gap: auto;
+            grid-template-rows: auto;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-auto-columns: 1fr;
+            display: grid;
+            height: fit-content;
+            width: max-content;
+            justify-items: center;
+            overflow: visible;
+            position: relative;
+        }
+
+        .product_div {
+            vertical-align: top;
+            z-index: 0;
+            background-color: #f0da69;
+            border-radius: 30px;
+            width: 80%;
+            height: fit-content;
+            position: relative;
+            cursor: pointer;
+
+        }
+
+        .product_div:hover
+         {
+            transform: scale(1.1) !important;
+            transition: transform 0.3s ease-in-out;
+            }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .product_thumbnail_div {
+            padding-left: 5%;
+            width: 300px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .product_thumbnail_details_1 {
+            color: #252b61;
+            font-weight: bolder;
+            font-size: large;
+            overflow: hidden;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            border-radius: 20px;
+            background-color: #ffeded;
+            height: 200px;
+            padding: 0px 0px 0px 10px;
+
+        }
+
+        .footer {
+            align-items: center;
+            display: block;
+            width: calc(100%-649px);
+            height: 200px;
+            padding-top: 12px;
+            background: #0F3133;
+            background-size: cover;
+            position: relative;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 10px;
+            padding: 60px 50px 60px 50px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.9), 0px -4px 6px rgba(0, 0, 0, 0.9);
+           
+        }
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+          
+        }
+
+
+        .product_menu_section {
+            display: flex;
+            gap: 20px;
+        }
+
+
+
+        .p_menu_1 {
+            color: #252b61;
+            background-color: #f1dbdb;
+            width: 200px;
+            height: 70px;
+            border-radius: 50px;
+
+            cursor: pointer;
+            outline: none;
+            transition: background-color 0.5s, color 0.8s;
+        }
+
+        .nav_buttons {
+            display: flex;
+            gap: 10px;
+            margin-left: auto;
+        }
+        .search-results {
+            max-width: 1360px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #1F6366;
+            border-radius: 15px;
+            display: none;
+        }
+
+        .search-title {
+            color: #ffffff;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-family: 'Graphik Trial', sans-serif;
+        }
+
+        .search-results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .search-result-item {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 15px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .search-result-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .search-result-image {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .search-result-details {
+            padding: 10px;
+        }
+
+        .search-result-name {
+            font-size: 18px;
+            color: #1F6366;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .search-result-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .search-result-price {
+            font-size: 20px;
+            color: #00B207;
+            font-weight: bold;
+        }
+
+        /* Responsive design */
+        @media screen and (max-width: 768px) {
+            .search-results-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .search-results-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .cart-link {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .cart-popup {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: white;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease;
+            z-index: 1000;
+            
+        }
+
+        #cart:target {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Graphik Trial', sans-serif;
+            font-weight: 500;
+        }
+
+        .close-cart {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.5rem;
+        }
+
+        .cart-item {
+            display: flex;
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            align-items: center;
+            gap: 1rem;
+            font-family: 'Graphik Trial', sans-serif;
+            font-weight: 700;
+        }
+
+        .cart-item img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+        }
+
+        .item-details {
+            flex: 1;
+            font-family: 'Graphik Trial', sans-serif;
+            font-weight: 400;
+        }
+
+        .item-title {
+            color: #2B5329;
+            margin-bottom: 0.5rem;
+            font-family: 'Graphik Trial', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .item-price {
+            color: #333;
+            
+            font-family: 'Graphik Trial', sans-serif;
+            font-weight: 500;
+        }
+
+        .quantity-input {
+            width: 60px;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Graphik Trial', sans-serif;
+            font-weight: 500;
+        }
+
+        .remove-link {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-family: 'Graphik Trial', sans-serif;
+            font-weight: 500;
+        }
+
+        .cart-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            background: white;
+            border-top: 1px solid #eee;
+            font-family: 'Graphik Trial', sans-serif;
+            font-weight: 600;
+        }
+
+        .subtotal {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .checkout-button {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: #2B5329;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 4px;
+            font-family: 'Graphik Trial', sans-serif;
+            font-weight: 600;
+        }
+
+        .category-container {
+            background-color: #252B61;
+            padding-bottom: 70px;
+
+            border-radius: 60px;
+            align-items: center;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            padding-left: auto;
+            padding-right: auto;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1rem;
+            width: 1150px;
+
+        }
+
+        .category-item {
+            background-color: #FFF5F5;
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            text-decoration: none;
+            color: #333;
+            transition: transform 0.2s;
+        }
+
+        .category-item:hover {
+            transform: scale(1.05);
+        }
+
+        .category-image {
+            aspect-ratio: 1 / 1;
+            width: 100%;
+            object-fit: contain;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-name {
+            text-align: center;
+            font-size: 0.875rem;
+            font-weight: 500;
+            font-size: larger;
+        }
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+    .header_panel_wrap {
+        flex-direction: column;
+        min-width: auto;
+        gap: 20px;
+        padding: 10px;
+    }
+    .search_bar {
+        width: 90%;
+        max-width: 400px;
+    }
+    .nav_buttons {
+        margin: 10px auto;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+    .product_container_grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 15px;
+    }
+    .hero_page {
+        max-width: 100%;
+        height: auto;
+        margin: 0 10px;
+    }
+    .product_div {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hed {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 0;
+    }
+    .logo {
+        margin: 0 auto;
+    }
+    .search_bar_div, .search_button_div {
+        width: 90%;
+        margin: 10px auto;
+    }
+    .search_bar {
+        width: 100%;
+    }
+    .product_container_grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        width: 95%;
+        margin: 0 auto;
+    }
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        width: 95%;
+        margin: 0 auto;
+    }
+    .health {
+        font-size: 60px;
+        margin-top: 80px;
+    }
+    .nurse {
+        height: 250px;
+        width: 90%;
+    }
+    .product_thumbnail_div {
+        width: 100%;
+        padding: 10px;
+    }
+    .product_container_title {
+        font-weight: 700;
+        color: #ffffff;
+        line-height: 120%;
+        font-size:medium;
+
+        display: block;
+        text-transform: capitalize;
+        letter-spacing: -.02em;
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .product_container_grid {
+        grid-template-columns: 1fr;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .product_div {
+        width: 100%;
+        margin: 10px auto;
+    }
+    .product_thumbnail_div {
+        width: 100%;
+        height: auto;
+        padding: 5px;
+    }
+    .product_thumbnail_details_1 {
+        padding: 10px;
+        height: auto;
+    }
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        width: 90%;
+    }
+    .category-container {
+        padding: 10px;
+        border-radius: 20px;
+    }
+    .health {
+        font-size: 40px;
+        margin-top: 60px;
+    }
+    .nurse {
+        height: 180px;
+        width: 85%;
+    }
+    .hero_page {
+        height: 300px;
+        margin: 0 5px;
+    }
+    .product_container_title {
+        font-weight: 700;
+        color: #ffffff;
+        line-height: 120%;
+        font-size: 40px;
+
+        display: block;
+        text-transform: capitalize;
+        letter-spacing: -.02em;
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+    }
+}
+
+
+/* Mobile Navigation Menu */
+.mobile-nav {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+}
+.search_wrap{
+    display: flex;
+    width: fit-content;
+    position: relative;
+    left: 20%;
+    gap: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        z-index: 1001;
+    }
+
+    .mobile-nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #1F6366;
+        z-index: 1000;
+        padding-top: 60px;
+    }
+
+    .mobile-nav.active {
+        display: block;
+    }
+
+    .mobile-nav a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        padding: 15px 20px;
+        font-size: 18px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-nav a:hover {
+        background-color: #00B207;
+    }
+
+    .close-menu {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+    }
+    .product_container_title {
+        font-weight: 700;
+        color: #ffffff;
+        line-height: 120%;
+        font-size: 25px;
+
+        display: block;
+        text-transform: capitalize;
+        letter-spacing: -.02em;
+        padding-left: 5px ;
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+    }
+}
+
+ /* Hide buttons on smaller screens */
+ @media screen and (max-width: 768px) {
+    .cart, .d1, .d2 {
+        display: none;
+    }
+
+    .nav_buttons {
+        display: none;
+    }
+}
+
+/* Search bar styles */
+.search-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.search_bar {
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    width: 300px;
+    font-size: 16px;
+}
+
+.search_button {
+    background-color: #000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Search Results styles */
+.search-results {
+    background-color: #1F6366;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.search-title {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.search-results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+    </style>
+    <script>
+        console.log('HTML file loaded');
+    </script>
+</head>
+
+<body>
+    <!--header section-->
+    <header class="hed" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;">
+        <div class="header_panel_wrap">
+            <div class="logo">
+                <img class=""
+                    src="">
+            </div>
+            <!-- Mobile Navigation Menu -->
+            <div class="menu-icon" onclick="toggleMobileMenu()">☰</div>
+            <div class="mobile-nav">
+                <span class="close-menu" onclick="toggleMobileMenu()">✕</span>
+                <a href="#">Home</a>
+                <a href="#">Products</a>
+                <a href="#">Categories</a>
+                <a href="#">Cart</a>
+                <a href="#">Login</a>
+                <a href="#">Register</a>
+            </div>
+           
+            <script>
+            function toggleMobileMenu() {
+                const mobileNav = document.querySelector('.mobile-nav');
+                mobileNav.classList.toggle('active');
+            }
+            </script>
+           <div class="search_wrap">
+            <div class="search-container">
+                <input type="text" id="search" placeholder="dolo" class="search_bar">
+                <button class="search_button">SEARCH</button>
+            </div>
+        </div>
+            <nav class="nav_buttons">
+                <button class="cart" onclick="location.href='#cart'"><img
+                        style="display:flex; position:relative; left:30%; bottom:30%;  width:30px; height:27px;"
+                        src="https://cdn4.iconfinder.com/data/icons/e-commerce-shopping/100/shopping_bag-512.png"></button>
+
+                <button class="d1" onclick="location.href='login.html'">Login</button>
+
+
+                <button class="d2" onclick="location.href='register.html'">Register</button>
+            </nav>
+        </div>
+
+
+    </header>
+    <div id="cart" class="cart-popup">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <a href="#" class="close-cart">&times;</a>
+        </div>
+
+        <div class="cart-item">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-r7pnBnTIWj9P7gqTTHcBdsvdnTuEn3.png"
+                alt="Scalp replenish hair tablets">
+            <div class="item-details">
+                <h3 class="item-title">Scalp replenish hair tablets</h3>
+                <p class="item-price">Rs 79.00 USD</p>
+                <a href="#" class="remove-link">Remove</a>
+            </div>
+            <input type="number" value="1" min="1" class="quantity-input">
+        </div>
+
+        <div class="cart-footer">
+            <div class="subtotal">
+                <span>Subtotal</span>
+                <span>Rs 79.00</span>
+            </div>
+            <a href="#" class="checkout-button">Continue to checkout</a>
+        </div>
+    </div>
+    <div class="search-results" style="display: none;">
+        <div class="container">
+            <h2 class="search-title">Search Results</h2>
+            <div class="search-results-grid">
+                <!-- Results will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <div class="whole_product_div">
+        <!--hero section-->
+        <section class="hero_page" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;">
+
+            <div class="hero_page_div">
+                <div class="nurse"><img style="width: 100%;
+            height: 100%;"
+                        src="https://cdn.prod.website-files.com/63f596334718ae9963ed6e60/63fd8add913cf53264cf8fb1_Doctor%20Banner.png">
+                </div>
+                <div class="health">Healthcare</div>
+            </div>
+
+        </section>
+
+        <!--product section-->
+        <section class="product_section">
+            <div class="product_container">
+                <div class="product_container_title">
+                    <H1>Surgical essentials for you</H1>
+                </div>
+                <!--product container grid-->
+                <div class="product_container_grid">
+                    <div class="product_div">
+                        <div class="product_thumbnail_div">
+                            <img style="width:80%;height:100%;"
+                                src="https://cdn.prod.website-files.com/63f596334718ae9963ed6e60/63fc4d48ad0fbff1a863d90d_PRODUCT%20IMAGE.png">
+                        </div>
+                        <div class="product_thumbnail_details_1">
+                            <div>
+                                <h4>Nutrition</h4>
+                            </div>
+                            <div>
+                                <h4>Dietary Supplement
+                                    Health Products</h4>
+                            </div>
+                            <div>
+                                <h1>₹90.50</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_div" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+   transform-style: preserve-3d;">
+                        <div class="product_thumbnail_div">
+                            <img style="width: 80%;
+            height: 100%;" src="https://cdn.prod.website-files.com/63f596334718ae9963ed6e60/63fc4d48ad0fbff1a863d90d_PRODUCT%20IMAGE.png">
+                        </div>
+                        <div class="product_thumbnail_details_1">
+                            <div>
+                                <h4>Nutrition</h4>
+                            </div>
+                            <div>
+                                <h4>Dietary Supplement
+                                    Health Products</h4>
+                            </div>
+                            <div>
+                                <h1>₹90.50</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_div" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+                transform-style: preserve-3d;">
+                        <div class="product_thumbnail_div">
+                            <img style="width: 80%;
+            height: 100%;" src="https://cdn.prod.website-files.com/63f596334718ae9963ed6e60/63fc4d48ad0fbff1a863d90d_PRODUCT%20IMAGE.png">
+                        </div>
+                        <div class="product_thumbnail_details_1">
+                            <div>
+                                <h4>Nutrition</h4>
+                            </div>
+                            <div>
+                                <h4>Dietary Supplement
+                                    Health Products</h4>
+                            </div>
+                            <div>
+                                <h1>₹90.50</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_div" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+   transform-style: preserve-3d;">
+                        <div class="product_thumbnail_div">
+                            <img style="width: 80%;
+            height: 100%;" src="https://cdn.prod.website-files.com/63f596334718ae9963ed6e60/63fc4d48ad0fbff1a863d90d_PRODUCT%20IMAGE.png">
+                        </div>
+                        <div class="product_thumbnail_details_1">
+                            <div>
+                                <h4>Nutrition</h4>
+                            </div>
+                            <div>
+                                <h4>Dietary Supplement
+                                    Health Products</h4>
+                            </div>
+                            <div>
+                                <h1>₹90.50</h1>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <!--product section-->
+        <section class="product_section_2">
+            <div class="product_container_2">
+                <div class="product_container_title">
+                    <H1>Medical essentials for you</H1>
+                </div>
+                <!--product container grid-->
+                <div class="product_container_grid">
+                    <div class="product_div">
+                        <div class="product_thumbnail_div">
+                            <img style="width:80%;height:100%;"
+                                src="https://cdn.prod.website-files.com/63f596334718ae9963ed6e60/63fc4d48ad0fbff1a863d90d_PRODUCT%20IMAGE.png">
+                        </div>
+                        <div class="product_thumbnail_details_1">
+                            <h4>Nutrition</h4>
+                            <h4>Dietary Supplement
+                                Health Products</h4>
+                            <h1>₹90.50</h1>
+                        </div>
+                    </div>
+                    <div class="product_div" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+transform-style: preserve-3d;">
+                        <div class="product_thumbnail_div">
+                            <img style="width: 80%;
+        height: 100%;" src="https://cdn.prod.website-files.com/63f596334718ae9963ed6e60/63fc4d48ad0fbff1a863d90d_PRODUCT%20IMAGE.png">
+                        </div>
+                        <div class="product_thumbnail_details_1">
+                            <div>
+                                <h4>Nutrition</h4>
+                            </div>
+                            <div>
+                                <h4>Dietary Supplement
+                                    Health Products</h4>
+                            </div>
+                            <div>
+                                <h1>₹90.50</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_div" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+            transform-style: preserve-3d;">
+                        <div class="product_thumbnail_div">
+                            <img style="width: 80%;
+        height: 100%;" src="https://cdn.prod.website-files.com/63f596334718ae9963ed6e60/63fc4d48ad0fbff1a863d90d_PRODUCT%20IMAGE.png">
+                        </div>
+                        <div class="product_thumbnail_details_1">
+                            <div>
+                                <h4>Nutrition</h4>
+                            </div>
+                            <div>
+                                <h4>Dietary Supplement
+                                    Health Products</h4>
+                            </div>
+                            <div>
+                                <h1>₹90.50</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_div" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+transform-style: preserve-3d;">
+                        <div class="product_thumbnail_div">
+                            <img style="width: 80%;
+        height: 100%;" src="https://cdn.prod.website-files.com/63f596334718ae9963ed6e60/63fc4d48ad0fbff1a863d90d_PRODUCT%20IMAGE.png">
+                        </div>
+                        <div class="product_thumbnail_details_1">
+                            <div>
+                                <h4>Nutrition</h4>
+                            </div>
+                            <div>
+                                <h4>Dietary Supplement
+                                    Health Products</h4>
+                            </div>
+                            <div>
+                                <h1>₹90.50</h1>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <section class="product_section_3">
+            <div class="product_container_3">
+                <div class="category-container">
+                    <div class="product_container_title">
+                        <H1>Product categories</H1>
+                    
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="footer" style="color: #ffff; padding: 20px; text-align: center; ">
+        <div style=" font-size:30px; max-width: 1200px; margin: 0 auto;">
+            <!-- Company Info -->
+            <div style="margin-bottom: 20px;">
+                <h4 style="margin: 0; ;">Pharma-Companion</h4>
+                <p style="margin: 5px 0; font-size: 14px; color: #666;">Your trusted online pharmacy and healthcare
+                    partner</p>
+            </div>
+
+            <!-- Footer Links -->
+            <div style="margin-bottom: 20px;">
+                <a href="/about" style="margin-right: 15px; color: #007bff; text-decoration: none;">About Us</a>
+                <a href="/contact" style="margin-right: 15px; color: #007bff; text-decoration: none;">Contact</a>
+                <a href="/privacy-policy" style="margin-right: 15px; color: #007bff; text-decoration: none;">Privacy
+                    Policy</a>
+                <a href="/terms" style="color: #007bff; text-decoration: none;">Terms of Service</a>
+            </div>
+
+            <!-- Social Media Links -->
+            <div style="margin-bottom: 20px;">
+                <a href="https://facebook.com" target="_blank"
+                    style="margin-right: 10px; color: #3b5998; text-decoration: none;">Facebook</a>
+                
+                <a href="https://instagram.com" target="_blank"
+                    style="margin-right: 10px; color: #c32aa3; text-decoration: none;">Instagram</a>
+                <a href="https://linkedin.com" target="_blank"
+                    style="color: #0077b5; text-decoration: none;">LinkedIn</a>
+        
+
+            <!-- Copyright -->
+            
+                <p style="font-size: 12px; color: #999; margin: 0;">&copy; 2025 Pharma-Companion. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
